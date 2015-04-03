@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerAutoRotate : MonoBehaviour 
 {
-	float rotationCooldown = 1.5f;
+	float rotationCooldown = 1.0f;
 	float rotationCooldownTimeConter = 0;
 	public AnimationCurve rotationAnimCurve;
 
