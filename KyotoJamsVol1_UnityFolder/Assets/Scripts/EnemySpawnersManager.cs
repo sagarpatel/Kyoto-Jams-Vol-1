@@ -5,14 +5,14 @@ public class EnemySpawnersManager : MonoBehaviour
 {
 	public EnemiesSpawner[] enemySpawners;
 
-	float currentSpawnCooldown = 2.0f;
+	float currentSpawnCooldown = 4.0f;
 	float cooldownDecrementerFactor = 0.1f;
 	float spawnCooldownFloor = 0.25f;
 	float cooldownTimeCounter = 0;
 
-	float currentEnemyMoveSpeed = 0.5f;
-	float enemyMoveSpeedCeiling = 2.0f;
-	float enemyMoveSpeedIncrementFactor = 0.1f;
+	float currentEnemyMoveSpeed = 0.15f;
+	float enemyMoveSpeedCeiling = 1.0f;
+	float enemyMoveSpeedIncrementFactor = 0.05f;
 
 	int currentSpawnerIndex = 0;
 
