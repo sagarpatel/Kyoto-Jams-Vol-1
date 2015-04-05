@@ -7,9 +7,28 @@ public class PlayerAutoRotate : MonoBehaviour
 	float rotationCooldownTimeConter = 0;
 	public AnimationCurve rotationAnimCurve;
 
+	float currentRotationSpeed = 0;
+	float rotationSpeedIncrement = 1.5f;
+	float maxRotationSpeed = 10.0f;
+
+	void Start()
+	{
+		currentRotationSpeed = 0;
+
+	}
+
 
 	void Update()
 	{
+
+
+		currentRotationSpeed += rotationSpeedIncrement * Time.deltaTime;
+		currentRotationSpeed = Mathf.Clamp(currentRotationSpeed, 0, maxRotationSpeed);
+
+		transform.Rotate( new Vector3(0, currentRotationSpeed * Time.deltaTime, 0));
+
+
+		/*
 		rotationCooldownTimeConter += Time.deltaTime;
 
 		if(rotationCooldownTimeConter > rotationCooldown)
@@ -20,10 +39,18 @@ public class PlayerAutoRotate : MonoBehaviour
 
 		}
 
-
+		*/
 
 	}
 
+	// TODO need to deletegate this
+	public void KillRotation()
+	{
+		currentRotationSpeed = 0;
+	}
+
+
+	/*
 
 	IEnumerator RotatePlayer()
 	{
@@ -44,6 +71,6 @@ public class PlayerAutoRotate : MonoBehaviour
 		transform.rotation = endRot;
 
 	}
-
+	*/
 
 }
